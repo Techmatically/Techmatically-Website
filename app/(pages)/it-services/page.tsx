@@ -1,14 +1,31 @@
 import Container from "../../../components/common/container";
-import PageHeader from "../../../components/common/page-header";
 import Reveal from "../../../components/motion/reveal";
 
 export default function ITServicesPage() {
   return (
     <main className="bg-background text-foreground">
-      <PageHeader
-        title="IT Services"
-        subtitle="Practical consulting and managed support designed to keep your systems stable and your teams productive."
-      />
+
+      <section className="relative h-[60vh] w-full overflow-hidden flex items-center justify-center text-center">       
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/itservices2.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 px-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white">
+            IT Services
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
+            Practical consulting and managed support designed to keep your systems stable and your teams productive.
+          </p>
+        </div>
+      </section>
 
       <section className="py-16">
         <Container>
@@ -58,4 +75,3 @@ export default function ITServicesPage() {
     </main>
   );
 }
-

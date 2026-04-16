@@ -48,24 +48,24 @@ export default function ContactPage() {
               <div>
   <h3 className="font-semibold mb-3">Social media</h3>
 
-      <div className="flex gap-3 text-white/90">
-        {/* Facebook */}
-        <a
-          href="https://facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
-        >
-          <FaFacebookF size={14} />
-        </a>
+  <div className="flex gap-3 text-white/90">
+    {/* Facebook */}
+    <a
+      href="https://facebook.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+    >
+      <FaFacebookF size={14} />
+    </a>
 
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/company/techmatically/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
-        >
+    {/* LinkedIn */}
+    <a
+      href="https://www.linkedin.com/company/techmatically/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+    >
       <FaLinkedinIn size={14} />
     </a>
 

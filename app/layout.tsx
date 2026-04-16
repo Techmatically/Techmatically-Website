@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Techmatically — Software & IT Services",
-    template: "%s — Techmatically",
+    default: "Techmatically - Software & IT Services",
+    template: "%s - Techmatically",
   },
   description:
     "Techmatically provides software development, application services, and IT solutions for modern businesses.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   applicationName: "Techmatically",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Techmatically — Software & IT Services",
+    title: "Techmatically - Software & IT Services",
     description:
       "Software development, application services, and IT solutions for modern businesses.",
     type: "website",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"

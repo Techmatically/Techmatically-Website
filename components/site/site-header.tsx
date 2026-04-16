@@ -1,13 +1,11 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { NAV_ITEMS } from "../../lib/navigation";
 
 export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-background/75 backdrop-blur dark:border-white/10">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        
-        {/* Logo Only */}
         <Link href="/" className="flex items-center">
           <Image
             src="/techmatically_logo.png"
@@ -19,7 +17,6 @@ export default function SiteHeader() {
           />
         </Link>
 
-        {/* Navigation */}
         <nav className="hidden items-center gap-5 text-sm text-zinc-700 dark:text-zinc-300 md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
@@ -32,7 +29,6 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        {/* CTA Button */}
         <div className="flex items-center gap-2">
           <Link
             href="/contact"
@@ -41,7 +37,6 @@ export default function SiteHeader() {
             Get in touch
           </Link>
         </div>
-
       </div>
     </header>
   );

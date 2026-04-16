@@ -3,12 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --brand: #2563eb; /* blue-600 */
-  --brand-2: #0ea5e9; /* sky-500 */
-  --muted: #f4f4f5; /* zinc-100 */
+  --brand: #2563eb;
+  --brand-2: #0ea5e9;
+  --muted: #f4f4f5;
 }
 
-@theme inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brand: var(--brand);
@@ -22,7 +22,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --muted: #0f172a; /* slate-900-ish */
+    --muted: #0f172a;
   }
 }
 
@@ -35,34 +35,27 @@ body {
   background: color-mix(in srgb, var(--brand) 35%, transparent);
 }
 
-/* Subtle background grid for “life” without noise */
+/* Subtle background grid for depth without noise */
 .bg-grid {
-  background-image: linear-gradient(
-      to right,
-      color-mix(in srgb, var(--foreground) 8%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--foreground) 8%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 48px 48px;
-  background-position: center;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridMove 30s linear infinite;
 }
 
 @keyframes floaty {
   0%,
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: translate(-50%, 0px);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    transform: translate(-50%, 20px);
   }
 }
 
 .animate-floaty {
-  animation: floaty 7s ease-in-out infinite;
+  animation: floaty 6s ease-in-out infinite;
 }
 
 /* Scroll reveal */
@@ -94,10 +87,54 @@ body {
     animation: none !important;
     transition: none !important;
   }
+
   .reveal-out,
   .reveal-in {
     opacity: 1;
     transform: none;
     filter: none;
   }
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 40px 40px;
+  }
+}
+
+.pulse-grid {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 150, 255, 0.12) 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+  animation: pulseGrid 6s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+@keyframes pulseGrid {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+  }
+}
+
+.mouse-glow {
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(0, 150, 255, 0.15),
+    transparent 250px
+  );
+  transition: background 0.1s linear;
 }
