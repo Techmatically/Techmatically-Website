@@ -6,18 +6,6 @@ This project presents Techmatically's software, IT, infrastructure, and packaged
 
 ---
 
-## Preview
-
-Add your screenshots here when you are ready.
-
-```md
-![Homepage](./public/your-homepage-screenshot.png)
-![Solutions Page](./public/your-solutions-screenshot.png)
-![Contact Page](./public/your-contact-screenshot.png)
-```
-
----
-
 ## Highlights
 
 - Modern landing page with animated hero and reveal-on-scroll sections

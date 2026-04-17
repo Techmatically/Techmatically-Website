@@ -101,7 +101,7 @@ export default function SiteFooter() {
           </p>
 
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-black dark:hover:text-white transition-colors">
+            <Link href="/privacy-policy" className="hover:text-black dark:hover:text-white transition-colors">
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-black dark:hover:text-white transition-colors">
