@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Techmatically
+
+A modern company website for Techmatically, built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
+
+This project presents Techmatically's software, IT, infrastructure, and packaged business solutions through a clean multi-page marketing experience with animated sections, reusable layout components, and a contact flow ready to be extended.
+
+---
+
+## Preview
+
+Add your screenshots here when you are ready.
+
+```md
+![Homepage](./public/your-homepage-screenshot.png)
+![Solutions Page](./public/your-solutions-screenshot.png)
+![Contact Page](./public/your-contact-screenshot.png)
+```
+
+---
+
+## Highlights
+
+- Modern landing page with animated hero and reveal-on-scroll sections
+- Dedicated service pages for About, IT Services, Development Services, Hardware & Networking, and Solutions
+- Reusable site-wide header, footer, container, and page header components
+- Contact page UI for inquiries plus a starter API route at `/api/contact`
+- Responsive layout built for desktop and mobile screens
+- Tailwind CSS v4 styling with custom brand tokens and motion accents
+
+---
+
+## Built With
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Lucide React
+- React Icons
+
+---
+
+## Pages
+
+- `/` - Homepage
+- `/about` - Company overview, vision, mission, and quality approach
+- `/it-services` - IT consulting, outsourcing, and installation services
+- `/development-services` - Application and portal development offerings
+- `/hardware-networking` - Networking, maintenance, and partner-led solutions
+- `/solutions` - Packaged business and ERP-style solution modules
+- `/contact` - Contact information and inquiry form
+- `/api/contact` - Placeholder POST endpoint for future form handling
+
+---
+
+## Project Structure
+
+```text
+techmatically/
+|-- app/
+|   |-- (pages)/
+|   |-- api/contact/
+|   |-- globals.css
+|   |-- layout.tsx
+|   `-- page.tsx
+|-- components/
+|   |-- common/
+|   |-- motion/
+|   |-- contact/
+|   `-- site/
+|-- lib/
+|   `-- navigation.ts
+|-- public/
+`-- README.md
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Open the app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev    # Start local development server
+npm run build  # Create production build
+npm run start  # Run production server
+npm run lint   # Run ESLint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design Notes
 
-## Deploy on Vercel
+This project uses a clean corporate visual style with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Gradient brand accents
+- Motion-based section reveals
+- Reusable content containers
+- Sticky navigation and call-to-action focused layout
+- Light and dark theme-aware color tokens through CSS variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Contact Form Status
+
+The UI for the contact page is in place, and the repository already includes a starter `POST /api/contact` route.
+
+Right now, the API validates input and returns a success response, but it does not yet send email or store submissions. It is ready to be connected to a provider such as Resend, SendGrid, or a CRM workflow later.
+
+---
+
+## Customization
+
+A few easy places to personalize the site:
+
+- Update navigation links in `lib/navigation.ts`
+- Adjust branding colors in `app/globals.css`
+- Replace the logo and media in `public/`
+- Expand page content inside `app/(pages)/`
+- Connect the contact form to a real backend workflow
+
+---
+
+## Deployment
+
+You can deploy this project on any platform that supports Next.js, including:
+
+- Vercel
+- Netlify
+- Docker-based hosting
+- Traditional Node.js server environments
+
+For production deployment, build the app with:
+
+```bash
+npm run build
+npm run start
+```
+
+---
+
+## Roadmap
+
+Potential next improvements:
+
+- Connect the contact form to email or CRM delivery
+- Add real project screenshots and service visuals
+- Improve SEO metadata per page
+- Add analytics and conversion tracking
+- Add content management support for easier updates
+
+---
+
+## License
+
+This project is currently private and intended for Techmatically.
