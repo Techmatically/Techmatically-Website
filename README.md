@@ -6,21 +6,6 @@ This project presents Techmatically's software, IT, infrastructure, and packaged
 
 ---
 
-## Preview
-
-Add your screenshots here when you are ready.
-
-```md
-<img width="1918" height="868" alt="image" src="https://github.com/user-attachments/assets/470fe624-1951-4bfd-82e5-067f08d35c63" />
-
-<img width="1918" height="870" alt="image" src="https://github.com/user-attachments/assets/412ba7f4-1609-4fe6-ae4a-f496aa5b4ae8" />
-
-<img width="1918" height="867" alt="image" src="https://github.com/user-attachments/assets/0585102a-5446-44f2-9514-b7b5b17e04cb" />
-
-```
-
----
-
 ## Highlights
 
 - Modern landing page with animated hero and reveal-on-scroll sections
