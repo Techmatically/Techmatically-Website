@@ -198,3 +198,8 @@ body {
   transform: translate(-50%, -50%) rotate(45deg);
   background: white;
 }
+
+.leaflet-control-attribution {
+  font-size: 10px;
+  opacity: 0.5;
+}

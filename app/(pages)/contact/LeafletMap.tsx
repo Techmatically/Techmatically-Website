@@ -3,7 +3,7 @@
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-const officePosition: [number, number] = [24.8607, 67.0011];
+const officePosition: [number, number] = [24.876007216535207, 67.08821568995963];
 
 const officePin = L.divIcon({
   className: "custom-map-pin",
@@ -29,7 +29,7 @@ export default function LeafletMapComponent() {
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
           subdomains={["a", "b", "c", "d"]}
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          attribution='&copy; OpenStreetMap'
         />
         <Marker position={officePosition} icon={officePin}>
           <Popup>
