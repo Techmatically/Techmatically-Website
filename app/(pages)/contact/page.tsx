@@ -1,6 +1,12 @@
+'use client'
+
 import Container from "../../../components/common/container";
 import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import dynamic from "next/dynamic";
 
+const LeafletMap = dynamic(() => import("./LeafletMap"), {
+  ssr: false,
+});
 
 export default function ContactPage() {
   return (
@@ -46,40 +52,42 @@ export default function ContactPage() {
 
               {/* Social */}
               <div>
-  <h3 className="font-semibold mb-3">Social media</h3>
+                <h3 className="font-semibold mb-3">Social media</h3>
 
-  <div className="flex gap-3 text-white/90">
-    {/* Facebook */}
-    <a
-      href="https://facebook.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
-    >
-      <FaFacebookF size={14} />
-    </a>
+                <div className="flex gap-3 text-white/90">
+                  <a
+                    href="https://facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+                  >
+                    <FaFacebookF size={14} />
+                  </a>
 
-    {/* LinkedIn */}
-    <a
-      href="https://www.linkedin.com/company/techmatically/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
-    >
-      <FaLinkedinIn size={14} />
-    </a>
+                  <a
+                    href="https://www.linkedin.com/company/techmatically/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+                  >
+                    <FaLinkedinIn size={14} />
+                  </a>
 
-    {/* Twitter / X */}
-    <a
-      href="https://twitter.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
-    >
-      <FaXTwitter size={14} />
-    </a>
-  </div>
-</div>
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+                  >
+                    <FaXTwitter size={14} />
+                  </a>
+                </div>
+              </div>
+
+              {/* ✅ MAP UNDER SOCIAL */}
+              <div className="mt-6 overflow-hidden rounded-xl border border-white/20">
+                <LeafletMap />
+              </div>
 
             </div>
 

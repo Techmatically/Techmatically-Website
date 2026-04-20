@@ -28,8 +28,8 @@ export const NAV_ITEMS: NavItem[] = [
     label: "Development",
     href: "/development-services",
     children: [
-      { label: "Web Development", href: "/development/web-dev" },
-      { label: "App Development", href: "/development/app-dev" },
+      { label: "Web Development", href: "/development-services/web-dev" },
+      { label: "App Development", href: "/development-services/app-dev" },
     ],
   },
   {
