@@ -79,7 +79,17 @@ npm install
 npm run dev
 ```
 
-### 3. Open the app
+### 3. Start the development server
+
+```bash
+SMTP_HOST=mail.SMTP-HOST.com
+SMTP_PORT= your-port
+SMTP_USER=notification@SMTP_USER.com
+SMTP_PASS= Your-password
+SMTP_RECEIVER=mail@SMTP_RECEIVER.com
+```
+
+### 4. Open the app
 
 Visit [http://localhost:3000](http://localhost:3000)
 
