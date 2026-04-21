@@ -79,7 +79,7 @@ npm install
 npm run dev
 ```
 
-### 3. Start the development server
+### 3. Set Environment Variables
 
 ```bash
 SMTP_HOST=mail.SMTP-HOST.com
