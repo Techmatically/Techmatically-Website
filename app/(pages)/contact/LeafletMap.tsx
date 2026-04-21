@@ -3,7 +3,7 @@
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
-const officePosition: [number, number] = [24.876007216535207, 67.08821568995963];
+const officePosition: [number, number] = [24.897350001453116, 67.07752523366801];
 
 const officePin = L.divIcon({
   className: "custom-map-pin",
@@ -35,9 +35,9 @@ export default function LeafletMapComponent() {
           <Popup>
             <div className="space-y-1 text-sm text-zinc-900">
               <div className="font-semibold">Techmatically</div>
-              <div>Suite# 106-108</div>
-              <div>Sumya Business Avenue M.A.C.H.S</div>
-              <div>Karachi, Pakistan</div>
+              <div>Suite# 318</div>
+              <div>Mashriq Center</div>
+              <div>Gulshan Block 14, Karachi, Pakistan</div>
             </div>
           </Popup>
         </Marker>

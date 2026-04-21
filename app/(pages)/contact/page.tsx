@@ -9,47 +9,48 @@ const LeafletMap = dynamic(() => import("./LeafletMap"), {
   ssr: false,
 });
 
+type FormData = {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+  phone: string;
+  message: string;
+  website: string;
+};
+
 export default function ContactPage() {
-  // 1. State for form data (HONEYPOT ADDED)
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     company: "",
     email: "",
     phone: "",
     message: "",
-    website: "", // 👈 HONEYPOT FIELD (hidden trap for bots)
+    website: "",
   });
 
   const [status, setStatus] = useState("");
 
-  // 2. Handle input changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 3. VALIDATION LOGIC (STEP 1 unchanged)
   const validateForm = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^(\+92|0)?3[0-9]{9}$/;
 
     if (!formData.firstName.trim()) return "First name is required";
     if (!formData.lastName.trim()) return "Last name is required";
-
     if (!emailRegex.test(formData.email)) return "Enter a valid email";
-
-    if (!phoneRegex.test(formData.phone))
-      return "Enter a valid Pakistani phone number";
-
-    if (formData.message.trim().length < 10)
-      return "Message must be at least 10 characters";
+    if (!phoneRegex.test(formData.phone)) return "Enter a valid Pakistani phone number";
+    if (formData.message.trim().length < 10) return "Message must be at least 10 characters";
 
     return null;
   };
 
-  // 4. Submit to API
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -65,7 +66,7 @@ export default function ContactPage() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData), // includes honeypot field too
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
@@ -77,12 +78,13 @@ export default function ContactPage() {
           email: "",
           phone: "",
           message: "",
-          website: "", // reset honeypot too
+          website: "",
         });
       } else {
         setStatus("Failed to send message.");
       }
-    } catch (error) {
+    } catch (err) {
+      console.error(err);
       setStatus("An error occurred.");
     }
   };
@@ -98,56 +100,59 @@ export default function ContactPage() {
               <h2 className="text-2xl font-semibold mb-8">Get in touch</h2>
 
               <div className="mb-6">
-                <h3 className="font-semibold mb-1">Visit us</h3>
-                <p className="text-sm opacity-90 leading-relaxed">
-                  Suite# 106-108 <br />
-                  Sumya Business Avenue M.A.C.H.S<br />
-                  Karachi, Pakistan
+                <h3 className="font-semibold mb-1 text-base">Visit us</h3>
+                <p className="text-base opacity-90 leading-relaxed">
+                  Suite# 318 <br />
+                  Mashriq Center <br />
+                  Gulshan Block 14, Karachi, Pakistan
                 </p>
               </div>
 
               <div className="mb-6">
-                <h3 className="font-semibold mb-1">Chat to us</h3>
-                <p className="text-sm opacity-90">
+                <h3 className="font-semibold mb-1 text-base">Chat to us</h3>
+                <p className="text-base opacity-90">
                   Our friendly team is here to help.<br />
                   techmati@techmatically.com
                 </p>
               </div>
 
               <div className="mb-6">
-                <h3 className="font-semibold mb-1">Call us</h3>
-                <p className="text-sm opacity-90">
+                <h3 className="font-semibold mb-1 text-base">Call us</h3>
+                <p className="text-base opacity-90">
                   Mon–Fri from 8am to 5pm<br />
                   (+92) 321-3166393
                 </p>
               </div>
 
               <div>
-                <h3 className="font-semibold mb-3">Social media</h3>
+                <h3 className="font-semibold mb-3 text-base">Social media</h3>
                 <div className="flex gap-3 text-white/90">
 
                   <a
                     href="https://facebook.com"
                     target="_blank"
-                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
                   >
-                    <FaFacebookF size={14} />
+                    <FaFacebookF size={18} />
                   </a>
 
                   <a
                     href="https://www.linkedin.com/company/techmatically/"
                     target="_blank"
-                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
                   >
-                    <FaLinkedinIn size={14} />
+                    <FaLinkedinIn size={18} />
                   </a>
 
                   <a
                     href="https://twitter.com"
                     target="_blank"
-                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition"
                   >
-                    <FaXTwitter size={14} />
+                    <FaXTwitter size={18} />
                   </a>
 
                 </div>
@@ -215,7 +220,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* 🛡️ HONEYPOT FIELD (invisible to humans) */}
+                {/* Honeypot */}
                 <input
                   name="website"
                   value={formData.website}

@@ -61,9 +61,9 @@ export default function SiteFooter() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                 <span className="leading-relaxed">
-                  Suite# 106-108 <br />
-                  Sumya Business Avenue <br />
-                  M.A.C.H.S, Karachi, Pakistan
+                  Suite# 318 <br />
+                  Mashriq Center <br />
+                  Gulshan Block 14, Karachi, Pakistan
                 </span>
               </li>
 
